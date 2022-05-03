@@ -11,30 +11,34 @@ echo "DEVICE_NAME=$DEVICE_NAME"
 echo "USER=$USER"
 echo "PASS=$PASS"
 
-DEVICE=""
-BACKEND=""
-VERB=""
-USER=""
-PASS=""
-
 if [ "$VERBOSE" == "true" ]; then
   VERB="-v"
+else
+  VERB=""
 fi
 
 if [ "$BACKEND_NAME" != "" ]; then
   BACKEND="--backend $BACKEND_NAME"
+else
+  BACKEND=""
 fi
 
 if [ "$DEVICE_NAME" != "" ]; then
   DEVICE="--device $DEVICE_NAME"
+else
+  DEVICE=""
 fi
 
 if [ "$USER" != "" ]; then
   USER="-u $USER"
+else
+  USER=""
 fi
 
 if [ "$PASS" != "" ]; then
   PASS="-p $PASS"
+else
+  PASS=""
 fi
 
 if [ "$DEVICE_NAME" == "equal" ]; then
