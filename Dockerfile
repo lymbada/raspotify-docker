@@ -1,7 +1,7 @@
 # FROM resin/rpi-raspbian
 #FROM balenalib/rpi-raspbian
 ARG ARCH=
-FROM ${ARCH}debian:buster
+FROM ${ARCH}debian:bullseye
 
 RUN apt-get update && \
     apt-get -y install gnupg2 alsa-utils libasound2-plugin-equal gettext curl apt-transport-https && \
