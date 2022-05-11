@@ -10,6 +10,7 @@ echo "BACKEND_NAME=$BACKEND_NAME"
 echo "DEVICE_NAME=$DEVICE_NAME"
 echo "USER=$USER"
 echo "PASS=$PASS"
+echo "LIBRESPOT_DISABLE_DISCOVERY=$LIBRESPOT_DISABLE_DISCOVERY"
 
 if [ "$VERBOSE" == "true" ]; then
   VERB="-v"
@@ -39,6 +40,12 @@ if [ "$PASS" != "" ]; then
   PASS="-p $PASS"
 else
   PASS=""
+fi
+
+if [ "$LIBRESPOT_DISABLE_DISCOVERY" != "" ]; then
+  export LIBRESPOT_DISABLE_DISCOVERY="$LIBRESPOT_DISABLE_DISCOVERY"
+else
+  LIBRESPOT_DISABLE_DISCOVERY=""
 fi
 
 if [ "$DEVICE_NAME" == "equal" ]; then
