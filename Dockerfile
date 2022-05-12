@@ -27,6 +27,7 @@ ENV EQUALIZATION ''
 
 COPY /asound.conf /
 COPY /equalizer.sh /
+COPY /raspotify_config.default /etc/raspotify/conf
 
 COPY /startup.sh /
 ENTRYPOINT /startup.sh
